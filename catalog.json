@@ -2,6 +2,19 @@
   "version": 1,
   "tools": [
     {
+      "id": "fathom",
+      "name": "Fathom Meeting Intelligence",
+      "description": "Browse recent meetings and retrieve transcripts from Fathom. Use when the user asks about past meetings, wants to find a transcript, or needs to recall what was discussed in a recorded call.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "archive": "tools/fathom.zip",
+      "companion_skill": "fathom",
+      "actions": [
+        { "name": "list_meetings", "description": "List recent meetings from Fathom with titles, dates, durations, and recording IDs" },
+        { "name": "get_transcript", "description": "Get the full speaker-labeled transcript for a specific meeting recording" }
+      ]
+    },
+    {
       "id": "godaddy-dns",
       "name": "GoDaddy DNS",
       "description": "Manage DNS records for GoDaddy domains via the GoDaddy API. Use when the user asks about DNS records, needs to add, view, or delete DNS entries, or wants to check what records exist on a domain.",
