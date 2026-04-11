@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "id": "godaddy-dns",
+      "name": "GoDaddy DNS",
+      "description": "Manage DNS records for GoDaddy domains via the GoDaddy API. Use when the user asks about DNS records, needs to add, view, or delete DNS entries, or wants to check what records exist on a domain.",
+      "version": "1.0.0",
+      "category": "infrastructure",
+      "archive": "tools/godaddy-dns.zip",
+      "actions": [
+        { "name": "list_domains", "description": "List all domains in the GoDaddy account with status and expiry" },
+        { "name": "get_records", "description": "Get all DNS records for a domain" },
+        { "name": "get_records_by_type", "description": "Get DNS records for a domain filtered by record type (A, CNAME, MX, TXT, etc.)" },
+        { "name": "add_record", "description": "Add a new DNS record to a domain. Supports A, CNAME, MX, TXT, AAAA and other types." },
+        { "name": "delete_record", "description": "Delete all DNS records matching a given type and name for a domain" }
+      ]
+    },
+    {
+      "id": "harvest",
+      "name": "Harvest Time Tracking",
+      "description": "Track time, manage projects, and view invoices via the Harvest API. Use when the user asks about time tracking, logging hours, or projects.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "archive": "tools/harvest.zip",
+      "companion_skill": "harvest",
+      "actions": [
+        { "name": "list_projects", "description": "List all active projects with client info and budget status" },
+        { "name": "get_project", "description": "Get details for a specific project by ID" },
+        { "name": "list_time_entries", "description": "List time entries with optional date and project filters" },
+        { "name": "create_time_entry", "description": "Log time to a project. Requires project_id and task_id." },
+        { "name": "list_project_assignments", "description": "List project assignments showing which tasks are available for each project" }
+      ]
+    },
+    {
+      "id": "jira",
+      "name": "Jira",
+      "description": "Search, create, and manage Jira issues and projects. Use when the user asks about tickets, sprints, project boards, issue tracking, or bug reports. Works with Jira Cloud (REST API v3).",
+      "version": "1.0.0",
+      "category": "productivity",
+      "archive": "tools/jira.zip",
+      "companion_skill": "jira",
+      "actions": [
+        { "name": "search_issues", "description": "Search Jira issues using JQL. Use for finding issues by project, status, assignee, label, sprint, or any criteria." },
+        { "name": "get_issue", "description": "Get full details for a specific Jira issue by key (e.g. PROJ-123). Returns all fields including description, comments, and linked issues." },
+        { "name": "get_projects", "description": "List all Jira projects accessible to the authenticated user. Returns project key, name, type, and category." },
+        { "name": "get_transitions", "description": "Get available status transitions for an issue. Always call this before transition_issue to find valid transition IDs." },
+        { "name": "transition_issue", "description": "Move an issue to a new status. Call get_transitions first to find valid transition IDs." },
+        { "name": "create_issue", "description": "Create a new Jira issue. Call get_projects first to confirm the project key." },
+        { "name": "add_comment", "description": "Add a comment to an existing Jira issue by key." }
+      ]
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "description": "Search pages, read content, and query databases in Notion. Use when the user asks about notes, docs, wikis, or databases in Notion.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "archive": "tools/notion.zip",
+      "companion_skill": "notion",
+      "actions": [
+        { "name": "search", "description": "Search across all pages and databases by keyword" },
+        { "name": "get_page", "description": "Get a specific Notion page by ID" },
+        { "name": "get_page_content", "description": "Get the block content (body) of a Notion page" },
+        { "name": "list_databases", "description": "List all databases the integration has access to" },
+        { "name": "query_database", "description": "Query a database to get its rows/entries with optional filters" }
+      ]
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright Testing",
+      "description": "Run E2E tests, take screenshots, and list test suites using Playwright. Use when the user asks to run tests, check UI, or take screenshots.",
+      "version": "1.0.0",
+      "category": "testing",
+      "archive": "tools/playwright.zip",
+      "companion_skill": "pm-e2e",
+      "actions": [
+        { "name": "list_suites", "description": "List all available UI automation test suites" },
+        { "name": "run_tests", "description": "Run a specific test suite and return pass/fail results" },
+        { "name": "run_journey", "description": "Generate and run an E2E test from a plain-English journey description. Pass a URL and what to test — Claude writes the Playwright test, runs it in a real browser, and returns pass/fail results." },
+        { "name": "screenshot", "description": "Take a screenshot of a URL using Playwright" }
+      ]
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "description": "Deploy static files to a public Vercel URL for sharing. Use when the user wants to publish, share, or get a public link for HTML/CSS/JS files.",
+      "version": "1.0.0",
+      "category": "infrastructure",
+      "archive": "tools/vercel.zip",
+      "companion_skill": "vercel",
+      "actions": [
+        { "name": "deploy", "description": "Deploy a directory of static files to Vercel and return a public URL" },
+        { "name": "deploy_html", "description": "Deploy raw HTML content to Vercel and return a public URL. Use when you have HTML as a string and want to share it — no need to create files first." },
+        { "name": "list_deployments", "description": "List recent deployments for the authenticated Vercel account" },
+        { "name": "delete_deployment", "description": "Delete a specific deployment from Vercel by its deployment ID" }
+      ]
+    }
+  ]
+}
