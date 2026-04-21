@@ -2,6 +2,29 @@
   "version": 1,
   "tools": [
     {
+      "id": "asana",
+      "name": "Asana",
+      "description": "Manage tasks, projects, and workspaces in Asana. Use when the user asks about tasks, project boards, work tracking, or team coordination in Asana. Works with Asana REST API v1.0.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "archive": "tools/asana.zip",
+      "companion_skill": "asana",
+      "actions": [
+        { "name": "list_workspaces", "description": "List all workspaces accessible to the authenticated user" },
+        { "name": "list_projects", "description": "List projects in a workspace with name, GID, and status" },
+        { "name": "get_project", "description": "Get full details for a specific project by GID" },
+        { "name": "list_sections", "description": "List sections (columns) in a project with names and GIDs" },
+        { "name": "list_tasks", "description": "List tasks filtered by project, section, or assignee" },
+        { "name": "get_task", "description": "Get full details for a specific task including notes, assignee, and custom fields" },
+        { "name": "search_tasks", "description": "Search tasks in a workspace by text with filters for assignee, project, completion, and dates" },
+        { "name": "get_task_stories", "description": "Get comments and activity history on a task" },
+        { "name": "create_task", "description": "Create a new task with name, description, assignee, due date, and project" },
+        { "name": "update_task", "description": "Update an existing task's fields (name, notes, assignee, due date, completion)" },
+        { "name": "add_comment", "description": "Add a comment to a task" },
+        { "name": "add_task_to_section", "description": "Move or add a task to a section within a project" }
+      ]
+    },
+    {
       "id": "fathom",
       "name": "Fathom Meeting Intelligence",
       "description": "Browse recent meetings and retrieve transcripts from Fathom. Use when the user asks about past meetings, wants to find a transcript, or needs to recall what was discussed in a recorded call.",
